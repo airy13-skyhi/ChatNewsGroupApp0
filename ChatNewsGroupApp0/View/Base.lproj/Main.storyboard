@@ -35,9 +35,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7Q-XE-5i2">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7Q-XE-5i2">
                                 <rect key="frame" x="87" y="87" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="V1z-PZ-Hqk" appends="YES" id="RNf-GS-861"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザー名を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spY-NH-yES">
                                 <rect key="frame" x="87" y="400" width="240" height="34"/>
@@ -49,6 +53,9 @@
                                 <rect key="frame" x="87" y="500" width="240" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="新規登録"/>
+                                <connections>
+                                    <action selector="createNewUser:" destination="yB8-yC-cYX" eventType="touchUpInside" id="4Vo-wz-1cZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZKi-ZG-0vJ"/>
@@ -61,6 +68,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXO-eZ-gZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="V1z-PZ-Hqk">
+                    <connections>
+                        <action selector="tapImageView:" destination="yB8-yC-cYX" id="6CE-BT-FWq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1540.5797101449277" y="-573.21428571428567"/>
         </scene>
