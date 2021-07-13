@@ -24,7 +24,7 @@ class CreateNewUserController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         
         
     }
@@ -77,6 +77,16 @@ class CreateNewUserController: UIViewController, UIImagePickerControllerDelegate
     
     @IBAction func createNewUser(_ sender: Any) {
         
+        let sendDBModel = SendDBModel()
+        
+        Auth.auth().signInAnonymously { result, error in
+            
+            //送信内容の最終調整後、送信完了
+            sendDBModel.createNewUser(profileImageData: (self.profileImageView.image?.jpegData(compressionQuality: 0.3))!, name: self.nameTextField.text!, uid: Auth.auth().currentUser!.uid)
+         
+            self.dismiss(animated: true, completion: nil)
+            
+        }
         
     }
     
