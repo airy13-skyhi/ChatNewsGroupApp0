@@ -26,6 +26,8 @@ class CreateNewUserController: UIViewController, UIImagePickerControllerDelegate
         
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         
+        //ボタンレイアウトmethod
+        Util.rectButton(button: createButton)
         
     }
     
