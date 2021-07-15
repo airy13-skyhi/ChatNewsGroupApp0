@@ -35,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtW-v9-B2O">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtW-v9-B2O">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -46,7 +46,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQ7-52-p6x">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="lQ7-52-p6x">
                                 <rect key="frame" x="87" y="105" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -79,11 +79,17 @@
                                 <rect key="frame" x="63" y="674" width="289" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="背景画像を設定する"/>
+                                <connections>
+                                    <action selector="setBackgroundImage:" destination="Cqq-UT-6k3" eventType="touchUpInside" id="MiG-M2-hIu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bka-TH-3b8">
                                 <rect key="frame" x="63" y="729" width="289" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作成"/>
+                                <connections>
+                                    <action selector="createAction:" destination="Cqq-UT-6k3" eventType="touchUpInside" id="UKV-DG-03y"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="90j-AY-Bcd"/>
@@ -93,16 +99,20 @@
                     <connections>
                         <outlet property="backgroundButton" destination="2ww-za-OA2" id="qf6-wT-mZR"/>
                         <outlet property="backgroundImageView" destination="rtW-v9-B2O" id="m2e-qa-5VY"/>
-                        <outlet property="createButton" destination="Bka-TH-3b8" id="VUW-Vp-KL4"/>
+                        <outlet property="roomCreateButton" destination="Bka-TH-3b8" id="OAm-IY-yKz"/>
                         <outlet property="roomDetailTextView" destination="yAy-ZP-mWq" id="jQt-sg-xh4"/>
                         <outlet property="roomImageView" destination="lQ7-52-p6x" id="yJO-oZ-cxx"/>
                         <outlet property="roomNameTextField" destination="NQ3-Dd-7ox" id="j7k-GD-Q1k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APH-XF-U9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="iNl-xz-Feh"/>
+                <tapGestureRecognizer id="iNl-xz-Feh">
+                    <connections>
+                        <action selector="tap:" destination="Cqq-UT-6k3" id="dE2-Jh-0RH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1540.5797101449277" y="786.83035714285711"/>
+            <point key="canvasLocation" x="1541" y="777"/>
         </scene>
         <!--Create New User Controller-->
         <scene sceneID="3Ph-Ey-MnL">
@@ -139,9 +149,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="createButton" destination="JF6-iX-AtA" id="vjr-XL-gXr"/>
                         <outlet property="nameTextField" destination="spY-NH-yES" id="4o2-Qq-MNd"/>
                         <outlet property="profileImageView" destination="j7Q-XE-5i2" id="JlP-Iv-aYH"/>
+                        <outlet property="userCreateButton" destination="JF6-iX-AtA" id="Huv-oV-cNg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXO-eZ-gZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -212,6 +222,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="home" width="128" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

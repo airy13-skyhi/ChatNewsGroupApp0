@@ -13,10 +13,11 @@ import Firebase
 class CreateNewUserController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
+    let sendDBModel = SendDBModel()
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var userCreateButton: UIButton!
     
     
     
@@ -27,7 +28,7 @@ class CreateNewUserController: UIViewController, UIImagePickerControllerDelegate
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         
         //ボタンレイアウトmethod
-        Util.rectButton(button: createButton)
+        Util.rectButton(button: userCreateButton)
         
     }
     
@@ -79,12 +80,12 @@ class CreateNewUserController: UIViewController, UIImagePickerControllerDelegate
     
     @IBAction func createNewUser(_ sender: Any) {
         
-        let sendDBModel = SendDBModel()
         
-        Auth.auth().signInAnonymously { result, error in
+        
+        Auth.auth().signInAnonymously { [self] result, error in
             
             //送信内容の最終調整後、送信完了
-            sendDBModel.createNewUser(profileImageData: (self.profileImageView.image?.jpegData(compressionQuality: 0.3))!, name: self.nameTextField.text!, uid: Auth.auth().currentUser!.uid)
+            self.sendDBModel.createNewUser(profileImageData: (self.profileImageView.image?.jpegData(compressionQuality: 0.3))!, name: self.nameTextField.text!, uid: Auth.auth().currentUser!.uid)
          
             self.dismiss(animated: true, completion: nil)
             

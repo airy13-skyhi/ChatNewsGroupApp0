@@ -18,6 +18,9 @@
 		0594E507269D9F7800D5BB3E /* SendDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0594E506269D9F7800D5BB3E /* SendDBModel.swift */; };
 		0594E509269DB6B500D5BB3E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0594E508269DB6B500D5BB3E /* Util.swift */; };
 		0594E50B269E88C100D5BB3E /* CreateNewRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0594E50A269E88C100D5BB3E /* CreateNewRoomViewController.swift */; };
+		05EC04BF269FE725005856AE /* LoadDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EC04BE269FE725005856AE /* LoadDBModel.swift */; };
+		05EC04C2269FE7E0005856AE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EC04C0269FE7E0005856AE /* MenuCell.swift */; };
+		05EC04C3269FE7E0005856AE /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05EC04C1269FE7E0005856AE /* MenuCell.xib */; };
 		198B12F253B313DE9EE14A7F /* Pods_ChatNewsGroupApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4BC73875752BC6AF6B9C8F /* Pods_ChatNewsGroupApp0.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		0594E506269D9F7800D5BB3E /* SendDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDBModel.swift; sourceTree = "<group>"; };
 		0594E508269DB6B500D5BB3E /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		0594E50A269E88C100D5BB3E /* CreateNewRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRoomViewController.swift; sourceTree = "<group>"; };
+		05EC04BE269FE725005856AE /* LoadDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDBModel.swift; sourceTree = "<group>"; };
+		05EC04C0269FE7E0005856AE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		05EC04C1269FE7E0005856AE /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		1621EEAAA7E9F1D5E330B6AB /* Pods-ChatNewsGroupApp0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatNewsGroupApp0.debug.xcconfig"; path = "Target Support Files/Pods-ChatNewsGroupApp0/Pods-ChatNewsGroupApp0.debug.xcconfig"; sourceTree = "<group>"; };
 		A0BDE8B21CADEA5ACE18C2D1 /* Pods-ChatNewsGroupApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatNewsGroupApp0.release.xcconfig"; path = "Target Support Files/Pods-ChatNewsGroupApp0/Pods-ChatNewsGroupApp0.release.xcconfig"; sourceTree = "<group>"; };
 		BD4BC73875752BC6AF6B9C8F /* Pods_ChatNewsGroupApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatNewsGroupApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				0594E4F1269D917300D5BB3E /* Main.storyboard */,
+				05EC04C0269FE7E0005856AE /* MenuCell.swift */,
+				05EC04C1269FE7E0005856AE /* MenuCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 			children = (
 				0594E506269D9F7800D5BB3E /* SendDBModel.swift */,
 				0594E508269DB6B500D5BB3E /* Util.swift */,
+				05EC04BE269FE725005856AE /* LoadDBModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 			files = (
 				0594E4F8269D918700D5BB3E /* LaunchScreen.storyboard in Resources */,
 				0594E505269D993400D5BB3E /* GoogleService-Info.plist in Resources */,
+				05EC04C3269FE7E0005856AE /* MenuCell.xib in Resources */,
 				0594E4F5269D918700D5BB3E /* Assets.xcassets in Resources */,
 				0594E4F3269D917300D5BB3E /* Main.storyboard in Resources */,
 			);
@@ -247,7 +257,9 @@
 			files = (
 				0594E50B269E88C100D5BB3E /* CreateNewRoomViewController.swift in Sources */,
 				0594E507269D9F7800D5BB3E /* SendDBModel.swift in Sources */,
+				05EC04C2269FE7E0005856AE /* MenuCell.swift in Sources */,
 				0594E509269DB6B500D5BB3E /* Util.swift in Sources */,
+				05EC04BF269FE725005856AE /* LoadDBModel.swift in Sources */,
 				0594E4F0269D917300D5BB3E /* RoomViewController.swift in Sources */,
 				0594E503269D97A200D5BB3E /* CreateNewUserController.swift in Sources */,
 				0594E4EC269D917300D5BB3E /* AppDelegate.swift in Sources */,
