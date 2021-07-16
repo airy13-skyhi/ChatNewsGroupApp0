@@ -6,12 +6,39 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class MenuCell: UITableViewCell {
-
+    
+    @IBOutlet weak var roomImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    static let identifier = "MenuCell"
+    
+    static func nib() -> UINib {
+        
+        return UINib(nibName: "MenuCell", bundle: nil)
+        
+    }
+    
+    
+    func configrure(chatRoomDetail:ChatRoomDetail) {
+        
+        titleLabel.text = chatRoomDetail.roomName
+        roomImageView.sd_setImage(with: URL(string: chatRoomDetail.roomImageString), completed: nil)
+        
+    }
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        roomImageView.layer.cornerRadius = roomImageView.frame.width/2
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

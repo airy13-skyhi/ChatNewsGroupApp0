@@ -8,10 +8,13 @@
 import UIKit
 import Firebase
 
-class RoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GetRoomNameProtocol {
+    
+    
     
     
     var tableView = UITableView()
+    var chatRoomDetailArray = [ChatRoomDetail]()
     
 
     override func viewDidLoad() {
@@ -38,6 +41,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.dataSource = self
             tableView.frame = view.bounds
             tableView.backgroundColor = .clear
+            tableView.register(MenuCell.nib(), forCellReuseIdentifier: MenuCell.identifier)
             
             //addSubview 貼り付け
             view.addSubview(tableView)
@@ -57,21 +61,33 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.chatRoomDetailArray.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MenuCell.identifier, for: indexPath) as? MenuCell
         
-        return cell
+        cell?.configrure(chatRoomDetail: chatRoomDetailArray[indexPath.row])
+        
+        return cell!
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.frame.height/10
     }
+    
+    
+    
+    func getRoomNameProtocol(chatRoomDetailArray: [ChatRoomDetail]) {
+        self.chatRoomDetailArray = []
+        self.chatRoomDetailArray = chatRoomDetailArray
+        tableView.reloadData()
+    }
+    
+    
     
 }
 
