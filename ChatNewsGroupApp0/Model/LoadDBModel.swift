@@ -14,6 +14,14 @@ protocol GetRoomNameProtocol {
     func getRoomNameProtocol(chatRoomDetailArray:[ChatRoomDetail])
 }
 
+
+protocol GetUserData {
+    
+    func getUserData(userModel:UserModel)
+    
+}
+
+
 //受信Model
 class LoadDBModel {
     
@@ -21,6 +29,8 @@ class LoadDBModel {
     let db = Firestore.firestore()
     var chatRoomDetailArray = [ChatRoomDetail]()
     var getRoomNameProtocol:GetRoomNameProtocol?
+    var getUserData:GetUserData?
+    
     
     func loadRoomData() {
         
@@ -62,13 +72,21 @@ class LoadDBModel {
         
     }
     
-    
+    //My Profileを受信
     func loadProfileData() {
         
         db.collection("Users").document(Auth.auth().currentUser!.uid).addSnapshotListener { snapShot, error in
             
             
+            if error != nil {
+                return
+            }
             
+            let data = snapShot?.data()
+            let userModel = UserModel(name: data!["userName"] as! String, uid: data!["uid"] as! String, imageURLString: data!["imageURLString"] as! String, date: data!["date"] as! Double)
+            
+            
+            self.getUserData?.getUserData(userModel: userModel)
         }
         
     }

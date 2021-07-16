@@ -8,13 +8,15 @@
 import UIKit
 import Firebase
 
-class RoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GetRoomNameProtocol {
+class RoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GetRoomNameProtocol, GetUserData {
+    
     
     
     
     
     var tableView = UITableView()
     var chatRoomDetailArray = [ChatRoomDetail]()
+    var userModel:UserModel?
     
 
     override func viewDidLoad() {
@@ -42,6 +44,13 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.frame = view.bounds
             tableView.backgroundColor = .clear
             tableView.register(MenuCell.nib(), forCellReuseIdentifier: MenuCell.identifier)
+            
+            let loadDBModel = LoadDBModel()
+            loadDBModel.getRoomNameProtocol = self
+            loadDBModel.getUserData = self
+            
+            loadDBModel.loadRoomData()
+            loadDBModel.loadProfileData()
             
             //addSubview 貼り付け
             view.addSubview(tableView)
@@ -87,6 +96,19 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
+    
+    func getUserData(userModel: UserModel) {
+        
+        self.userModel = userModel
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+       
+    }
     
     
 }

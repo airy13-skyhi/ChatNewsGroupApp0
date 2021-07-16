@@ -14,7 +14,7 @@ struct UserModel {
     var name:String
     var uid:String
     var imageURLString:String
-    var date:String
+    var date:Double
     
 }
 

@@ -21,6 +21,7 @@
                     <navigationItem key="navigationItem" id="jQe-67-O85"/>
                     <connections>
                         <segue destination="yB8-yC-cYX" kind="presentation" identifier="createNewUserVC" modalPresentationStyle="fullScreen" id="ve4-Yc-cd9"/>
+                        <segue destination="t4s-6L-68W" kind="show" id="tyP-WL-7QR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -37,6 +38,7 @@
                         <viewLayoutGuide key="safeArea" id="ycG-g9-U0c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aWB-oj-bJE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xr-0A-3n7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
