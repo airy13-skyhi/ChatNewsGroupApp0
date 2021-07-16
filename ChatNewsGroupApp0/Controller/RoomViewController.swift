@@ -106,7 +106,12 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let chatVC = self.storyboard?.instantiateViewController(withIdentifier: "chatVC") as! ChatViewController
+        chatVC.userModel = self.userModel
+        chatVC.chatRoomDetail = self.chatRoomDetailArray[indexPath.row]
         
+        
+        self.navigationController?.pushViewController(chatVC, animated: true)
        
     }
     
