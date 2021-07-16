@@ -77,7 +77,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuCell.identifier, for: indexPath) as? MenuCell
-        
+        cell?.backgroundColor = .clear
         cell?.configrure(chatRoomDetail: chatRoomDetailArray[indexPath.row])
         
         return cell!
