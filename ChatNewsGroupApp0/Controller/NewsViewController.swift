@@ -11,7 +11,7 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
-    
+    var tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
