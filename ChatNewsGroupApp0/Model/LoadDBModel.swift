@@ -46,24 +46,32 @@ class LoadDBModel {
                         let chatRoomDetail = ChatRoomDetail(date: date, roomdetail: roomDetail, roomImageString: roomImageString, roomName: roomName, backgroundImage: backgroundImage, docID: docID)
                         
                         
+                        self.chatRoomDetailArray.append(chatRoomDetail)
                     }
                     
                     
                 }
                 
                 
-                self.getRoomNameProtocol?.getRoomNameProtocol(chatRoomDetailArray: <#T##[ChatRoomDetail]#>)
+                self.getRoomNameProtocol?.getRoomNameProtocol(chatRoomDetailArray: self.chatRoomDetailArray)
                 
                 
             }
+            
+        }
+        
+    }
+    
+    
+    func loadProfileData() {
+        
+        db.collection("Users").document(Auth.auth().currentUser!.uid).addSnapshotListener { snapShot, error in
             
             
             
         }
         
-        
     }
-    
     
 }
 
