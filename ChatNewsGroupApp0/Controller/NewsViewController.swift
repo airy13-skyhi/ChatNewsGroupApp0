@@ -12,6 +12,7 @@ import UIKit
 class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
+    var newsContentsArray = [NewsContents]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,31 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //addSubview 貼り付け
         view.addSubview(tableView)
-
+        
+        
         
     }
     
-
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return newsContentsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
     
 
 }

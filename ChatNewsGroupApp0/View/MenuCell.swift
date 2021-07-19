@@ -24,7 +24,7 @@ class MenuCell: UITableViewCell {
     }
     
     
-    func configrure(chatRoomDetail:ChatRoomDetail) {
+    func configure(chatRoomDetail:ChatRoomDetail) {
         
         titleLabel.text = chatRoomDetail.roomName
         roomImageView.sd_setImage(with: URL(string: chatRoomDetail.roomImageString), completed: nil)

@@ -28,6 +28,7 @@
 		05EC04CD26A1470A005856AE /* NewsContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EC04CC26A1470A005856AE /* NewsContents.swift */; };
 		05EC04D026A1493C005856AE /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EC04CE26A1493C005856AE /* NewsCell.swift */; };
 		05EC04D126A1493C005856AE /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05EC04CF26A1493C005856AE /* NewsCell.xib */; };
+		05EC04D326A51014005856AE /* JSONAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EC04D226A51014005856AE /* JSONAnalytics.swift */; };
 		198B12F253B313DE9EE14A7F /* Pods_ChatNewsGroupApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4BC73875752BC6AF6B9C8F /* Pods_ChatNewsGroupApp0.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		05EC04CC26A1470A005856AE /* NewsContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContents.swift; sourceTree = "<group>"; };
 		05EC04CE26A1493C005856AE /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		05EC04CF26A1493C005856AE /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		05EC04D226A51014005856AE /* JSONAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAnalytics.swift; sourceTree = "<group>"; };
 		1621EEAAA7E9F1D5E330B6AB /* Pods-ChatNewsGroupApp0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatNewsGroupApp0.debug.xcconfig"; path = "Target Support Files/Pods-ChatNewsGroupApp0/Pods-ChatNewsGroupApp0.debug.xcconfig"; sourceTree = "<group>"; };
 		A0BDE8B21CADEA5ACE18C2D1 /* Pods-ChatNewsGroupApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatNewsGroupApp0.release.xcconfig"; path = "Target Support Files/Pods-ChatNewsGroupApp0/Pods-ChatNewsGroupApp0.release.xcconfig"; sourceTree = "<group>"; };
 		BD4BC73875752BC6AF6B9C8F /* Pods_ChatNewsGroupApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatNewsGroupApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 				05EC04C4269FF081005856AE /* ChatRoomDetail.swift */,
 				05EC04C626A1256D005856AE /* UserModel.swift */,
 				05EC04CC26A1470A005856AE /* NewsContents.swift */,
+				05EC04D226A51014005856AE /* JSONAnalytics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EC04D326A51014005856AE /* JSONAnalytics.swift in Sources */,
 				05EC04CD26A1470A005856AE /* NewsContents.swift in Sources */,
 				0594E50B269E88C100D5BB3E /* CreateNewRoomViewController.swift in Sources */,
 				0594E507269D9F7800D5BB3E /* SendDBModel.swift in Sources */,
