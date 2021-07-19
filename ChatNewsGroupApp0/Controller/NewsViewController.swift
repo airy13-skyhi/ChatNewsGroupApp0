@@ -9,7 +9,9 @@ import UIKit
 
 
 
-class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DoneCatchNewsProtocol {
+    
+
     
     var tableView = UITableView()
     var newsContentsArray = [NewsContents]()
@@ -33,15 +35,29 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         //addSubview 貼り付け
         view.addSubview(tableView)
         
+        let jsonAnalytics = JSONAnalytics()
+        jsonAnalytics.doneCatchNewsProtocol = self
+        jsonAnalytics.start()
         
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
         
     }
     
     
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: NewsCell.identifier, for: indexPath) as! NewsCell
+        cell.backgroundColor = .clear
+        cell.configure(title: self.newsContentsArray[indexPath.row].title, publishedAt: self.newsContentsArray[indexPath.row].publisheAt, urlToImage: self.newsContentsArray[indexPath.row].urlToImage)
+        
+        return cell
     }
     
     
@@ -57,6 +73,14 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    
+    func doneCatchNews(newsContentsArray: [NewsContents]) {
+        
+        self.newsContentsArray = newsContentsArray
+        tableView.reloadData()
+    }
+    
     
 
 }
