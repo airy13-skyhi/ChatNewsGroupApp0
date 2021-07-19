@@ -29,7 +29,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.frame = view.bounds
         tableView.backgroundColor = .clear
-        tableView.register(MenuCell.nib(), forCellReuseIdentifier: MenuCell.identifier)
+        tableView.register(NewsCell.nib(), forCellReuseIdentifier: NewsCell.identifier)
         
         
         //addSubview 貼り付け
@@ -80,6 +80,22 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.newsContentsArray = newsContentsArray
         tableView.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "webVC", sender: indexPath.row)
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let webVC = segue.destination as! WebViewController
+        webVC.urlString = self.newsContentsArray[sender as! Int].url
+        webVC.authorTitle = self.newsContentsArray[sender as! Int].author
+        
+    }
+    
     
     
 

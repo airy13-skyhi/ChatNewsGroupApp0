@@ -83,7 +83,7 @@ class LoadDBModel {
             }
             
             let data = snapShot?.data()
-            let userModel = UserModel(name: data!["userName"] as! String, uid: data!["uid"] as! String, imageURLString: data!["imageURLString"] as! String, date: data!["date"] as! Double)
+            let userModel = UserModel(name: data!["name"] as! String, uid: data!["uid"] as! String, imageURLString: data!["imageURLString"] as! String, date: data!["date"] as! Double)
             
             
             self.getUserData?.getUserData(userModel: userModel)

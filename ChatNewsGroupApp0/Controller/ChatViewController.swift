@@ -6,13 +6,38 @@
 //
 
 import UIKit
+import MessageKit
+import Firebase
+import InputBarAccessoryView
+import SDWebImage
+import Hex
+import AVKit
 
-class ChatViewController: UIViewController {
+struct Sender:SenderType {
+    
+    var senderId:String
+    var displayName:String
+    
+}
+
+
+//アバターに使える機能 by Github
+class ChatViewController: MessagesViewController, MessagesLayoutDelegate, MessagesDataSource, MessagesDisplayDelegate, InputBarAccessoryViewDelegate, MessageCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
     
     var userModel:UserModel?
     var chatRoomDetail:ChatRoomDetail?
     
-
+    
+    //me
+    var currentUser = Sender(senderId: Auth.auth().currentUser!.uid, displayName: "")
+    
+    //other
+    var otherUser = Sender(senderId: "", displayName: "")
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +48,19 @@ class ChatViewController: UIViewController {
         
     }
     
+    
+    
+    func currentSender() -> SenderType {
+        <#code#>
+    }
+    
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        <#code#>
+    }
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        <#code#>
+    }
 
     
 }
