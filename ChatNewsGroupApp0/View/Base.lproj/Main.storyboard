@@ -39,10 +39,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="aWB-oj-bJE"/>
+                    <connections>
+                        <segue destination="bTT-zM-vsO" kind="show" id="ZNu-Mj-XXt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xr-0A-3n7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2377" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ETe-FS-TtN">
+            <objects>
+                <viewController id="bTT-zM-vsO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sKR-ar-9OI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="k3T-0f-zOV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9MX-tA-wj7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="udg-Tp-egl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3113" y="84"/>
         </scene>
         <!--Create New Room View Controller-->
         <scene sceneID="tka-jz-RWs">

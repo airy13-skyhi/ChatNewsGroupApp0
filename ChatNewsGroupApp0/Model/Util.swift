@@ -24,6 +24,24 @@ class Util {
     }
     
     
+    static func setChatColor(me:Bool) -> UIColor {
+        
+        
+        if me == true {
+            
+            let chatColor = UIColor(hex: "#42c4cc")
+            return chatColor
+            
+        }else {
+            
+            let chatColor = UIColor(hex: "#eceeef")
+            return chatColor
+        }
+        
+        
+    }
+    
+    
     
 }
 

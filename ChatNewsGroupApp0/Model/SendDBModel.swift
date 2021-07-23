@@ -108,18 +108,96 @@ class SendDBModel {
                     
                 }
                 
-                
             }
-            
-            
-            
-            
-            
             
         }
         
     }
     
+    
+    func sendMessage(senderID:String, text:String, displayName:String, imageURLString:String, docID:String) {
+        
+        
+        self.db.collection("Rooms").document("docID").collection("chat").document().setData(
+            
+            ["text":text as Any, "senderID":senderID as Any, "displayName":displayName as Any, "imageURLString":imageURLString as Any, "date":Date().timeIntervalSince1970]
+        
+        )
+        
+        
+    }
+    
+    
+    func sendImageData(image:UIImage, senderID:String, userModel:UserModel, docID:String) {
+        
+        let imageRef = Storage.storage().reference().child("ChatImages").child("\(UUID().uuidString + String(Date().timeIntervalSince1970)).jpeg")
+        
+        imageRef.putData(image.jpegData(compressionQuality: 0.3)!, metadata: nil) { metadata, error in
+            
+            
+            if error != nil {
+                return
+            }
+            
+            imageRef.downloadURL { url, error in
+                
+                if error != nil {
+                    return
+                }
+                
+                
+                if url != nil {
+                    
+                    self.db.collection("Rooms").document(docID).collection("chat").document().setData(
+                    
+                        ["senderID":Auth.auth().currentUser!.uid, "imageURLStrng":userModel.imageURLString, "displayName":userModel.name, "date":Date().timeIntervalSince1970, "attachImageString":url?.absoluteString as Any]
+                    
+                    )
+                    
+                }
+        
+            }
+            
+        }
+        
+    }
+    
+    
+    func sendVideoData(videoURL:URL, senderID:String, userModel:UserModel, docID:String, thumbnail:String) {
+        
+        let videoRef = Storage.storage().reference().child("Videos").child("\(UUID().uuidString + String(Date().timeIntervalSince1970)).mp4")
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "video/quickTime"
+        
+        if let videoData = NSData(contentsOf: videoURL) as Data? {
+            
+            videoRef.putData(videoData, metadata: nil) { metadata, error in
+                
+                if error != nil {
+                    return
+                }
+                
+                videoRef.downloadURL { url, error in
+                    
+                    if url != nil {
+                        
+                        self.db.collection("Rooms").document(docID).collection("chat").document().setData(
+                        
+                            ["senderID":Auth.auth().currentUser!.uid, "imageURLString":userModel.imageURLString, "displayName":userModel.name as Any, "date":Date().timeIntervalSince1970, "attachVideoString":url!.absoluteString, "thumbnailURLString":thumbnail]
+                            
+                        )
+                    }
+                }
+                
+                
+                
+                
+            }
+        }
+        
+        
+    }
     
     
     
